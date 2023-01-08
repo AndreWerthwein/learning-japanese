@@ -10,13 +10,17 @@ import { VocabularyCard } from './vocabulary/vocabulary-card/vocabulary-card.com
 // learner-feedback
 import { LearnerToolbar } from './learner-feedback/learner-toolbar/learner-toolbar.component';
 
+// dictionary
+import { DictionaryTable } from './dictionary/dictionary-table/dictionary-table.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     // vocabulary
     VocabularyCard,
     // learner-feedback
-    LearnerToolbar
+    LearnerToolbar,
+    DictionaryTable
   ],
   imports: [
     BrowserModule,
