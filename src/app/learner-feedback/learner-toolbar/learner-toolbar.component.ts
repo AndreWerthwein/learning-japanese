@@ -27,6 +27,12 @@ export class LearnerToolbar implements OnInit {
 
   } // reading current learner-status from local storage
 
+  onResetLearnerStatus(): void {
+    window.localStorage.removeItem('learnerStatus');
+    this.learnerSuccess = 0;
+    this.learnerFailure = 0;
+  } // resets current learner-status
+
   onLearnerStatusUpdate(success: boolean): void {
     let currentLearnerStatus : string | null = window.localStorage.getItem('learnerStatus');
     let learnerStatus: Array<boolean> = [];
