@@ -1,0 +1,52 @@
+/* yanone-kaffeesatz-regular - latin */
+@font-face {
+    font-family: 'Yanone Kaffeesatz';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../typefaces/Yanone_Kaffeesatz_400_Regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../typefaces/Yanone_Kaffeesatz_400_Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../typefaces/Yanone_Kaffeesatz_400_Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../typefaces/Yanone_Kaffeesatz_400_Regular.woff') format('woff'), /* Modern Browsers */
+         url('../typefaces/Yanone_Kaffeesatz_400_Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../typefaces/Yanone_Kaffeesatz_400_Regular.svg#YanoneKaffeesatz') format('svg'); /* Legacy iOS */
+  }
+
+  /* yanone-kaffeesatz-700 - latin */
+  @font-face {
+    font-family: 'Yanone Kaffeesatz Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../typefaces/Yanone_Kaffeesatz_700.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../typefaces/Yanone_Kaffeesatz_700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../typefaces/Yanone_Kaffeesatz_700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../typefaces/Yanone_Kaffeesatz_700.woff') format('woff'), /* Modern Browsers */
+         url('../typefaces/Yanone_Kaffeesatz_700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../typefaces/Yanone_Kaffeesatz_700.svg#YanoneKaffeesatz') format('svg'); /* Legacy iOS */
+  }
+
+  /* noto-sans-jp-regular - latin */
+@font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../typefaces/Noto_Sans_Japanese_400_Regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../typefaces/Noto_Sans_Japanese_400_Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../typefaces/Noto_Sans_Japanese_400_Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../typefaces/Noto_Sans_Japanese_400_Regular.woff') format('woff'), /* Modern Browsers */
+         url('../typefaces/Noto_Sans_Japanese_400_Regular.svg#NotoSansJP') format('svg'); /* Legacy iOS */
+  }
+  /* noto-sans-jp-700 - latin */
+  @font-face {
+    font-family: 'Noto Sans JP Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../typefaces/Noto_Sans_Japanese_700.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../typefaces/Noto_Sans_Japanese_700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../typefaces/Noto_Sans_Japanese_700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../typefaces/Noto_Sans_Japanese_700.woff') format('woff'), /* Modern Browsers */
+         url('../typefaces/Noto_Sans_Japanese_700.svg#NotoSansJP') format('svg'); /* Legacy iOS */
+  }

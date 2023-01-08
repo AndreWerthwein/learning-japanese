@@ -1,0 +1,23 @@
+@import "mixins";
+
+html {
+    font-size: 1em;
+    font-family: 'Yanone Kaffeesatz', Arial, Tahoma, sans-serif;
+    text-rendering: optimizeLegibility;
+    @include vendor__prefixes--all("font-smoothing", "antialiased");
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Yanone Kaffeesatz Bold', Arial, Tahoma, sans-serif;
+}
+
+h1.japanese, h2.japanese, h3.japanese, h4.japanese, h5.japanese, h6.japanese {
+    font-family: 'Noto Sans JP Bold', Arial, Tahoma, sans-serif;
+    font-weight: 700;
+}
+
+ul.japanese,
+ol.japanese,
+p.japanese {
+    font-family: 'Noto Sans JP', Arial, Tahoma, sans-serif;
+}
