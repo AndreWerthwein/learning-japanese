@@ -3,12 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+// vocabulary
 import { VocabularyCard } from './vocabulary/vocabulary-card/vocabulary-card.component';
+
+// learner-feedback
+import { LearnerToolbar } from './learner-feedback/learner-toolbar/learner-toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VocabularyCard
+    // vocabulary
+    VocabularyCard,
+    // learner-feedback
+    LearnerToolbar
   ],
   imports: [
     BrowserModule,
