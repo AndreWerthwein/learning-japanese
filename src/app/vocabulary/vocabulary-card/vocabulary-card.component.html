@@ -1,0 +1,11 @@
+<div>
+    <p>{{ data.translation }}</p>
+</div>
+<div>
+    <section *ngIf="data.originatesInJapanese">
+        <h1 *ngIf="data.japanese.kanji">{{ data.japanese.kanji }}</h1>
+        <p *ngIf="data.japanese.hiragana">{{ data.japanese.hiragana }}</p>
+    </section>
+    <p *ngIf="data.japanese.katakana">{{ data.japanese.katakana }}</p>
+    <p *ngIf="data.japanese.pronounciation"><em>{{ data.japanese.pronounciation }}</em></p>
+</div>

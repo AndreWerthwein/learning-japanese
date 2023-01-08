@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { VocabularyCardComponent } from './vocabulary/vocabulary-card/vocabulary-card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VocabularyCardComponent
   ],
   imports: [
     BrowserModule,
