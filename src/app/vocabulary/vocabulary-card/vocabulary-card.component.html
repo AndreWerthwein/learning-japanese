@@ -1,11 +1,24 @@
+<!-- ?? front -->
 <div>
     <p>{{ data.translation }}</p>
 </div>
+
+<!-- ?? back -->
 <div>
-    <section *ngIf="data.originatesInJapanese">
-        <h1 *ngIf="data.japanese.kanji"  class="japanese">{{ data.japanese.kanji }}</h1>
-        <p *ngIf="data.japanese.hiragana"  class="japanese">{{ data.japanese.hiragana }}</p>
+    <!-- ?? kanji are first, kana second -->
+    <kanji-with-hiragana *ngIf="data.japanese.isComposite && data.japanese.kanjiIsFirst && data.japanese.kanji" [data]="{kanji: data.japanese.kanji, hiragana: data.pronunciation.hiraganaOnly, pronunciation: data.pronunciation.latin}"></kanji-with-hiragana>
+    <p *ngIf="data.japanese.isComposite && data.japanese.kanjiIsFirst && data.japanese.kana">{{ data.japanese.kana }}</p>
+    
+    <!-- ?? kana are first, kanji second -->
+    <p *ngIf="data.japanese.isComposite && !data.japanese.kanjiIsFirst && data.japanese.kana">{{ data.japanese.kana }}</p>
+    <kanji-with-hiragana *ngIf="data.japanese.isComposite && !data.japanese.kanjiIsFirst && data.japanese.kanji" [data]="{kanji: data.japanese.kanji, hiragana: data.pronunciation.hiraganaOnly, pronunciation: data.pronunciation.latin}"></kanji-with-hiragana>
+
+    <!-- ?? only kana are used-->
+    <p *ngIf="!data.japanese.isComposite && data.japanese.kana">{{ data.japanese.kana }}</p>
+
+    <!-- ?? pronunciation -->
+    <section>
+        <p class="japanese">{{ data.pronunciation.hiraganaOnly }}</p>
+        <p>{{ data.pronunciation.latin }}</p>
     </section>
-    <p *ngIf="data.japanese.katakana"  class="japanese">{{ data.japanese.katakana }}</p>
-    <p *ngIf="data.japanese.pronounciation"><em>{{ data.japanese.pronounciation }}</em></p>
 </div>

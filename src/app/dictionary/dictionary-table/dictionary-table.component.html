@@ -2,35 +2,34 @@
     <thead>
         <tr>
             <th>Translation</th>
-            <th colspan="2">Traditional Japanese</th> 
-            <th>Non-traditional Japanese</th> 
-            <th colspan="2">Additional Information</th>
+            <th colspan="2">Traditional Japanese</th>
+            <th>Additional Information</th>
         </tr>
         <tr>
             <th>English</th>
-            <th>Kanji</th> 
-            <th>Hiragana</th> 
-            <th>Katakana</th>
-            <th>Pronounciation</th>
+            <th>Japanese</th> 
+            <th>in Hiragana</th>
             <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let tableRow of data">
             <td>{{ tableRow.word.translation}}</td>
-            <td>
-                <span *ngIf="tableRow.word.originatesInJapanese && tableRow.word.japanese.kanji">{{ tableRow.word.japanese.kanji }}</span>
-                <span *ngIf="!tableRow.word.originatesInJapanese  || !tableRow.word.japanese.kanji">---</span>
+
+            <!-- ?? combination: kanji + kana -->
+            <td *ngIf="tableRow.word.japanese.isComposite && tableRow.word.japanese.kanjiIsFirst && tableRow.word.japanese.kanji && tableRow.word.japanese.kana">{{ tableRow.word.japanese.kanji + tableRow.word.japanese.kana}}</td>
+            
+            <!-- ?? combination: kana + kanji -->
+            <td *ngIf="tableRow.word.japanese.isComposite && !tableRow.word.japanese.kanjiIsFirst && tableRow.word.japanese.kanji && tableRow.word.japanese.kana">{{ tableRow.word.japanese.kana + tableRow.word.japanese.kanji}}</td>
+            
+            <!-- ?? kana only -->
+            <td *ngIf="!tableRow.word.japanese.isComposite && tableRow.word.japanese.kana">{{ tableRow.word.japanese.kana }}</td>
+            
+            <!-- ?? pronunciation: hiragana -->
+            <td [title]="tableRow.word.pronunciation.latin">
+                <span *ngIf="tableRow.word.pronunciation.hiraganaOnly">{{ tableRow.word.pronunciation.hiraganaOnly }}</span>
+                <span *ngIf="!tableRow.word.pronunciation.hiraganaOnly">---</span>
             </td>
-            <td>
-                <span *ngIf="tableRow.word.originatesInJapanese && tableRow.word.japanese.hiragana">{{ tableRow.word.japanese.hiragana }}</span>
-                <span *ngIf="!tableRow.word.originatesInJapanese || !tableRow.word.japanese.hiragana">---</span>
-            </td>
-            <td>
-                <span *ngIf="!tableRow.word.originatesInJapanese && tableRow.word.japanese.katakana">{{ tableRow.word.japanese.katakana }}</span>
-                <span *ngIf="tableRow.word.originatesInJapanese || !tableRow.word.japanese.katakana">---</span>
-            </td>
-            <td>{{ tableRow.word.japanese.pronounciation}}</td>
             <td>
                 <section *ngIf="tableRow.description" [innerHTML]="tableRow.description"></section>
                 <span *ngIf="!tableRow.description">---</span>
