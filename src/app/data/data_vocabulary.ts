@@ -4,9 +4,9 @@ const VOCABULARY : Array<iVocabularyCard> = [
     {
         translation: 'Samurai',
         japanese: {
-            kanji: '侍',
+            isComposite: true,
             kanjiIsFirst: true,
-            kana: 'さむらい'
+            kanji: '侍',
         },
         pronunciation: {
             latin: 'sa-mu-ra-i',

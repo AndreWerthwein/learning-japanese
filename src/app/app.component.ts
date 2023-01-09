@@ -19,13 +19,13 @@ export class AppComponent {
       word: {
         translation: 'Samurai',
         japanese: {
-            kanji: '侍',
-            kanjiIsFirst: true,
-            kana: 'さむらい'
+          isComposite: true,
+          kanjiIsFirst: true,
+          kanji: '侍',
         },
         pronunciation: {
-            latin: 'sa-mu-ra-i',
-            hiraganaOnly: 'さむらい'
+          latin: 'sa-mu-ra-i',
+          hiraganaOnly: 'さむらい'
         }
     },
       description: ["What, right here right now in the cafeteria? What if she said no? I don't know if I could take that kind of rejection. Besides, I think she'd rather go with somebody else. Did you hurt your head? I just wanna use the phone. I don't wanna see you in here again. Like I always told you, if you put your mind to it you could accomplish anything."]

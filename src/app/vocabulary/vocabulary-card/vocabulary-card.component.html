@@ -1,24 +1,29 @@
-<!-- ?? front -->
-<div>
-    <p>{{ data.translation }}</p>
-</div>
-
-<!-- ?? back -->
-<div>
-    <!-- ?? kanji are first, kana second -->
-    <kanji-with-hiragana *ngIf="data.japanese.isComposite && data.japanese.kanjiIsFirst && data.japanese.kanji" [data]="{kanji: data.japanese.kanji, hiragana: data.pronunciation.hiraganaOnly, pronunciation: data.pronunciation.latin}"></kanji-with-hiragana>
-    <p *ngIf="data.japanese.isComposite && data.japanese.kanjiIsFirst && data.japanese.kana">{{ data.japanese.kana }}</p>
+<div class="vocabulary-card" [class.vocabulary-card__state--flipped]="vocabularyCardFlipped">
+    <!-- ?? front -->
+    <section class="vocabulary-card__flip--front">
+        <p>{{ data.translation }}</p>
+        <button (click)="onShowAnswer()"><p><span class="material-icons">360</span> Show answer</p></button>
+    </section>
     
-    <!-- ?? kana are first, kanji second -->
-    <p *ngIf="data.japanese.isComposite && !data.japanese.kanjiIsFirst && data.japanese.kana">{{ data.japanese.kana }}</p>
-    <kanji-with-hiragana *ngIf="data.japanese.isComposite && !data.japanese.kanjiIsFirst && data.japanese.kanji" [data]="{kanji: data.japanese.kanji, hiragana: data.pronunciation.hiraganaOnly, pronunciation: data.pronunciation.latin}"></kanji-with-hiragana>
+    <!-- ?? back -->
+    <section class="vocabulary-card__flip--back">
+        <!-- ?? kanji are first, kana second -->
+        <kanji-with-hiragana *ngIf="data.japanese.isComposite && data.japanese.kanjiIsFirst && data.japanese.kanji" [data]="{kanji: data.japanese.kanji, hiragana: data.pronunciation.hiraganaOnly, pronunciation: data.pronunciation.latin}"></kanji-with-hiragana>
+        <p *ngIf="data.japanese.isComposite && data.japanese.kanjiIsFirst && data.japanese.kana">{{ data.japanese.kana }}</p>
+        
+        <!-- ?? kana are first, kanji second -->
+        <p *ngIf="data.japanese.isComposite && !data.japanese.kanjiIsFirst && data.japanese.kana">{{ data.japanese.kana }}</p>
+        <kanji-with-hiragana *ngIf="data.japanese.isComposite && !data.japanese.kanjiIsFirst && data.japanese.kanji" [data]="{kanji: data.japanese.kanji, hiragana: data.pronunciation.hiraganaOnly, pronunciation: data.pronunciation.latin}"></kanji-with-hiragana>
+    
+        <!-- ?? only kana are used-->
+        <p *ngIf="!data.japanese.isComposite && data.japanese.kana">{{ data.japanese.kana }}</p>
+    
+        <!-- ?? pronunciation -->
+        <section>
+            <p class="japanese">{{ data.pronunciation.hiraganaOnly }}</p>
+            <p>{{ data.pronunciation.latin }}</p>
+        </section>
 
-    <!-- ?? only kana are used-->
-    <p *ngIf="!data.japanese.isComposite && data.japanese.kana">{{ data.japanese.kana }}</p>
-
-    <!-- ?? pronunciation -->
-    <section>
-        <p class="japanese">{{ data.pronunciation.hiraganaOnly }}</p>
-        <p>{{ data.pronunciation.latin }}</p>
+        <button (click)="onShowAnswer()"><p><span class="material-icons">360</span> Show answer</p></button>
     </section>
 </div>

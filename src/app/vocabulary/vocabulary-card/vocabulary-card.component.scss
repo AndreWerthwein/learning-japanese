@@ -1,0 +1,32 @@
+:host {
+    display: block;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+
+    & > div {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s ease-in-out;
+        transform-style: preserve-3d;
+
+        .vocabulary-card__flip--front,
+        .vocabulary-card__flip--back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            background-color: white;
+        }
+
+        .vocabulary-card__flip--back {
+            transform: rotateY(180deg);
+        }
+    }
+
+    .vocabulary-card__state--flipped {
+        transform: rotateY(180deg);
+    }
+}

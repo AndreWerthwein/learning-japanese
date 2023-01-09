@@ -10,9 +10,16 @@ import { iVocabularyCard } from './vocabulary-card.model';
 export class VocabularyCard implements OnInit {
   @Input() data: iVocabularyCard;
 
+  // local variables
+  vocabularyCardFlipped: boolean = false;
+
   constructor() {}
 
   ngOnInit(): void {
     // if (this.data) this.checkVocabularyCardData();
   }
+
+  onShowAnswer(): void {
+    this.vocabularyCardFlipped = !this.vocabularyCardFlipped;
+  } // shows answer by flipping the vocabulary-card
 }

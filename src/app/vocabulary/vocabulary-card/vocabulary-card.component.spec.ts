@@ -31,4 +31,14 @@ fdescribe('VocabularyCard', () => {
   it("should create 'VocabularyCard'", () => {
     expect(component).toBeTruthy();
   });
+
+  describe("onShowAnswer", () => {
+    it("should invert 'vocabularyCardFlipped'", () => {
+      component.vocabularyCardFlipped = false;
+
+      component.onShowAnswer();
+
+      expect(component.vocabularyCardFlipped).toBe(true);
+    })
+  })
 });
