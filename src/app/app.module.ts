@@ -13,6 +13,9 @@ import { LearnerToolbar } from './learner-feedback/learner-toolbar/learner-toolb
 // dictionary
 import { DictionaryTable } from './dictionary/dictionary-table/dictionary-table.component';
 
+// shared components
+import { KanjiWithHiragana } from './shared-components/kanji-with-hiragana/kanji-with-hiragana.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,8 @@ import { DictionaryTable } from './dictionary/dictionary-table/dictionary-table.
     VocabularyCard,
     // learner-feedback
     LearnerToolbar,
-    DictionaryTable
+    DictionaryTable,
+    KanjiWithHiragana
   ],
   imports: [
     BrowserModule,

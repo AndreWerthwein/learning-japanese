@@ -1,0 +1,29 @@
+:host {
+    display: inline-block;
+
+    & > div {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: center;
+
+        .japanese__hiragana {
+            font-size: 0.6rem;
+
+            & > p {
+                width: 100%;
+                display: inline;
+                line-height: 1;
+                margin: 0;
+            }
+        }
+
+        & > h1 {
+            width: 100%;
+            display: inline;
+            line-height: 1;
+            margin: 0;
+        }
+    }
+}
