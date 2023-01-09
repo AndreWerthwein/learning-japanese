@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { iFormsOfAdjectivesCard } from './adjectives/forms-of-adjectives-card/forms-of-adjectives-card.model';
+
+// interfaces
+import { iVocabularyCard } from './vocabulary/vocabulary-card/vocabulary-card.model';
+import { iDictionaryTableRow } from './dictionary/dictionary-table/dictionary-table-row.model';
 
 // example data
 import { VOCABULARY } from './data/data_vocabulary';
-import { iDictionaryTableRow } from './dictionary/dictionary-table/dictionary-table-row.model';
-import { iVocabularyCard } from './vocabulary/vocabulary-card/vocabulary-card.model';
+import { NA_ADJECTIVES } from './data/data_formsOfAdjectives';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +18,7 @@ import { iVocabularyCard } from './vocabulary/vocabulary-card/vocabulary-card.mo
 export class AppComponent {
   title = 'learning-japanese';
   vocabulary: Array<iVocabularyCard> = VOCABULARY;
+  adjectives: Array<iFormsOfAdjectivesCard> = NA_ADJECTIVES;
   dictionary: Array<iDictionaryTableRow> = [
     {
       word: {
@@ -45,27 +50,5 @@ export class AppComponent {
     }
   ];
 
-  adjectives = {
-      typeOfAdjective: 'な-Adjective',
-      adjective: {
-          kana: 'げんき（な)',
-          pronunciation: 'genki-na',
-          translation: 'being healthy'
-        },
-        negativePresent: {
-          kana: 'げんきじゃない',
-          pronunciation: 'ge-n-ki-ja-na-i',
-          translation: 'not being healthy'
-        },
-        positivePast: {
-          kana: 'げんきだった',
-          pronunciation: 'ge-n-ki-da-t-t-a',
-          translation: 'was healthy'
-        },
-        negativePast: {
-          kana: 'げんきじゃなかった',
-          pronunciation: 'ge-n-ki-ja-na-ka-t-t-a',
-          translation: 'was not healthy'
-      },
-  }
+  
 }
