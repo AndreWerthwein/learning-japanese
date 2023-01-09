@@ -43,5 +43,29 @@ export class AppComponent {
     },
       description: [""]
     }
-  ]
+  ];
+
+  adjectives = {
+      typeOfAdjective: 'な-Adjective',
+      adjective: {
+          kana: 'げんき（な)',
+          pronunciation: 'genki-na',
+          translation: 'being healthy'
+        },
+        negativePresent: {
+          kana: 'げんきじゃない',
+          pronunciation: 'ge-n-ki-ja-na-i',
+          translation: 'not being healthy'
+        },
+        positivePast: {
+          kana: 'げんきだった',
+          pronunciation: 'ge-n-ki-da-t-t-a',
+          translation: 'was healthy'
+        },
+        negativePast: {
+          kana: 'げんきじゃなかった',
+          pronunciation: 'ge-n-ki-ja-na-ka-t-t-a',
+          translation: 'was not healthy'
+      },
+  }
 }

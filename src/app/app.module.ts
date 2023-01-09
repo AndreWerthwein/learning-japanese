@@ -15,6 +15,7 @@ import { DictionaryTable } from './dictionary/dictionary-table/dictionary-table.
 
 // shared components
 import { KanjiWithHiragana } from './shared-components/kanji-with-hiragana/kanji-with-hiragana.component';
+import { FormsOfAdjectivesCard } from './adjectives/forms-of-adjectives-card/forms-of-adjectives-card.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { KanjiWithHiragana } from './shared-components/kanji-with-hiragana/kanji
     // learner-feedback
     LearnerToolbar,
     DictionaryTable,
-    KanjiWithHiragana
+    KanjiWithHiragana,
+    FormsOfAdjectivesCard
   ],
   imports: [
     BrowserModule,

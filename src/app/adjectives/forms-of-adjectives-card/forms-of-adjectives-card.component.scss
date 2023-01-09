@@ -1,0 +1,17 @@
+:host {
+    & >table {
+        &> tbody {
+            & > tr {
+                & > td:nth-child(2) {
+                    opacity: 0;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                .answer__show {
+                    opacity: 1 !important;
+                }
+            }
+        }
+    }
+
+}
