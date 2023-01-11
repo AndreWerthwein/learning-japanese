@@ -1,5 +1,26 @@
-<button title="I got it right." (click)="onLearnerStatusUpdate(true)"><p class="material-icons">check</p></button>
-<button title="I got it wrong." (click)="onLearnerStatusUpdate(false)"><p class="material-icons">close</p></button>
-<button title="Reset current learing progress." (click)="onResetLearnerStatus()"><p class="material-icons">restart_alt</p></button>
+<button title="I got it right." (click)="onLearnerStatusUpdate(true)">
+  <p class="material-icons">check</p>
+</button>
+<button title="I got it wrong." (click)="onLearnerStatusUpdate(false)">
+  <p class="material-icons">close</p>
+</button>
+<button
+  title="Reset current learing progress."
+  (click)="onResetLearnerStatus()"
+>
+  <p class="material-icons">restart_alt</p>
+</button>
+
+<!-- ?? success -->
 <p>Success: {{ learnerSuccess }} / {{ learnerSuccess + learnerFailure }}</p>
+<div class="learner__success--percentage">
+  <section [ngStyle]="{ width: learnerSuccessPercentage + '%' }"></section>
+</div>
+<p>{{ learnerSuccessPercentage }} %</p>
+
+<!-- ?? failure -->
 <p>Failure: {{ learnerFailure }} / {{ learnerSuccess + learnerFailure }}</p>
+<div class="learner__failure--percentage">
+  <section [ngStyle]="{ width: learnerFailurePercentage + '%' }"></section>
+</div>
+<p>{{ learnerFailurePercentage }} %</p>
