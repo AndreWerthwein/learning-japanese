@@ -1,0 +1,45 @@
+@import "sizes";
+@import "mixins";
+
+$kana-dropdown__options--max-height: calc(
+  (#{$base__size--xxl} * 5) + (#{$base__size--xxs} * 4)
+); // ?? enough space for 5 kana including spacing
+
+:host {
+  & > button {
+    padding: 0;
+    border: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    & > section {
+      width: $base__size--l;
+      height: calc(#{$base__size--xxl} + #{$base__size--xxxs});
+      margin: 0 0 0 $base__size--xxs;
+      border: thin black solid;
+      @include container__single-element--center-center;
+    }
+  }
+
+  .kana-dropdown__options {
+    position: relative;
+    width: calc(#{$base__size--xxl} + #{$base__size--l} + #{$base__size--xs});
+    margin: $base__size--xxs 0 0 0;
+    max-height: 0;
+    overflow: hidden;
+
+    & > kana:not(:last-child) {
+      margin: 0 0 $base__size--xxs 0;
+    }
+  }
+
+  .kana-dropdown__options--shown {
+    max-height: $kana-dropdown__options--max-height;
+    overflow: auto;
+  }
+}

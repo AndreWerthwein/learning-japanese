@@ -1,0 +1,20 @@
+<button (click)="onToggleDropdown()">
+  <kana
+    [showGrid]="true"
+    [data]="{ kana: chosenKana, pronunciation: chosenPronunciation }"
+  ></kana>
+  <section>
+    <p class="material-icons">expand_more</p>
+  </section>
+</button>
+<section
+  class="kana-dropdown__options"
+  [class.kana-dropdown__options--shown]="showDropdownOptions"
+>
+  <kana
+    *ngFor="let kana of data"
+    [showGrid]="true"
+    [data]="kana"
+    (click)="onChooseKana(kana.kana, kana.pronunciation)"
+  ></kana>
+</section>

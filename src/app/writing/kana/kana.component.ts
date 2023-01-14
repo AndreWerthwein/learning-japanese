@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { iKana } from './kana.model';
 
 @Component({
@@ -6,7 +6,16 @@ import { iKana } from './kana.model';
   templateUrl: './kana.component.html',
   styleUrls: ['./kana.component.scss'],
 })
-export class Kana {
+export class Kana implements OnChanges {
   @Input() showGrid?: boolean = true;
   @Input() data: iKana;
+
+  ngOnChanges(changes: SimpleChanges) {
+    // if (
+    //   changes &&
+    //   changes['data'].previousValue != changes['data'].currentValue
+    // ) {
+    //   this.data = changes['data'].currentValue;
+    // }
+  }
 }

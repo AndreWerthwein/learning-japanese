@@ -28,6 +28,7 @@ import { DictionaryTable } from './dictionary/dictionary-table/dictionary-table.
 
 // shared components
 import { KanjiWithHiragana } from './shared-components/kanji-with-hiragana/kanji-with-hiragana.component';
+import { KanaDropdown } from './shared-components/kana-dropdown/kana-dropdown.component';
 
 // legal notices
 import { Imprint } from './legal-notices/imprint/imprint.component';
@@ -113,6 +114,7 @@ const ROUTES: Routes = [
     PrivacyPolicy,
     LegalNoticesFooterComponent,
     Home,
+    KanaDropdown,
   ],
   imports: [
     BrowserModule,

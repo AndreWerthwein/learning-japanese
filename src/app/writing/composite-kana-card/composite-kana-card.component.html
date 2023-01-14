@@ -1,19 +1,31 @@
-<select>
-  <option *ngFor="let kana of data.rowOfKana"></option>
-</select>
+<kana-dropdown
+  [data]="data.rowOfKana"
+  (choice)="setKanaValue($event)"
+></kana-dropdown>
 
-<!-- hiragana -->
-<select *ngIf="data.isHiragana">
-  <option *ngFor="let option; in: hiraganaOptions">
-    <kana [data]="option"></kana>
-  </option>
-</select>
+<section class="operator__icon">
+  <p class="material-icons">add</p>
+</section>
 
-<!-- katakana -->
-<select *ngIf="!data.isHiragana">
-  <option *ngFor="let option; in: katakanaOptions">
-    <kana [data]="option"></kana>
-  </option>
-</select>
+<!-- ?? 'ya', 'yu', 'yo'  in hiragana or katakana -->
+<kana-dropdown
+  *ngIf="data.isHiragana"
+  [data]="hiraganaY"
+  (choice)="setYValue($event)"
+></kana-dropdown>
+<kana-dropdown
+  *ngIf="!data.isHiragana"
+  [data]="katakanaY"
+  (choice)="setYValue($event)"
+></kana-dropdown>
+
+<section class="operator__icon">
+  <p class="material-icons">east</p>
+</section>
 
 <kana [data]="data.solution"></kana>
+
+<section class="feedback__user">
+  <p *ngIf="answerGiven && userSuccess" class="material-icons">check</p>
+  <p *ngIf="answerGiven && !userSuccess" class="material-icons">close</p>
+</section>
