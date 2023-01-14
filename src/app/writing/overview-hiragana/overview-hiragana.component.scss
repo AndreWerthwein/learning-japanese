@@ -1,0 +1,10 @@
+@import "sizes";
+
+:host {
+  .overview__row--syllables {
+    display: grid;
+    grid-template-columns: repeat(5, $base__size--xxl);
+    grid-column-gap: $base__size--xs;
+    margin: 0 0 $base__size--m 0;
+  }
+}

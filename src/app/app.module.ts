@@ -6,6 +6,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 
+// writing
+import { Kana } from './writing/kana/kana.component';
+import { CompositeKanaCard } from './writing/composite-kana-card/composite-kana-card.component';
+import { OverviewHiragana } from './writing/overview-hiragana/overview-hiragana.component';
+import { OverviewKatakana } from './writing/overview-katakana/overview-katakana.component';
+
 // vocabulary
 import { VocabularyCard } from './vocabulary/vocabulary-card/vocabulary-card.component';
 import { VocabularyCardStack } from './vocabulary/vocabulary-card-stack/vocabulary-card-stack.component';
@@ -42,7 +48,20 @@ const ROUTES: Routes = [
     title: 'Vocabulary',
   },
   // {
-  //   path: '/adjectives',
+  //   path: 'writing',
+  // },
+  {
+    path: 'writing/overview-hiragana',
+    component: OverviewHiragana,
+    title: 'Overview: Hiragana',
+  },
+  {
+    path: 'writing/overview-katakana',
+    component: OverviewKatakana,
+    title: 'Overview: Katakana',
+  },
+  // {
+  //   path: 'adjectives',
   // },
   {
     path: 'adjectives/forms-of-adjectives',
@@ -75,6 +94,11 @@ const ROUTES: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    // writing
+    Kana,
+    CompositeKanaCard,
+    OverviewHiragana,
+    OverviewKatakana,
     // vocabulary
     VocabularyCard,
     VocabularyCardStack,
