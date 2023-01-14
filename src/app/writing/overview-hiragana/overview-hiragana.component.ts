@@ -4,7 +4,11 @@ import { Component } from '@angular/core';
 import { iKana } from '../kana/kana.model';
 
 // data
-import { HIRAGANA_VOWELS } from 'src/app/data/data_hiraganaSyllables';
+import {
+  HIRAGANA_K,
+  HIRAGANA_VOWELS,
+  HIRAGANA_Y,
+} from 'src/app/data/data_hiraganaSyllables';
 
 @Component({
   selector: 'overview-hiragana',
@@ -13,4 +17,6 @@ import { HIRAGANA_VOWELS } from 'src/app/data/data_hiraganaSyllables';
 })
 export class OverviewHiragana {
   hiraganaVowels: Array<iKana> = HIRAGANA_VOWELS;
+  hiraganaK: Array<iKana> = HIRAGANA_K;
+  hiraganaY: Array<iKana> = HIRAGANA_Y;
 }

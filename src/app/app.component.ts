@@ -8,6 +8,8 @@ import { iDictionaryTableRow } from './dictionary/dictionary-table/dictionary-ta
 // example data
 import { VOCABULARY } from './data/data_vocabulary';
 import { NA_ADJECTIVES } from './data/data_formsOfAdjectives';
+import { iKana } from './writing/kana/kana.model';
+import { HIRAGANA_K } from './data/data_hiraganaSyllables';
 
 @Component({
   selector: 'root',
@@ -16,6 +18,7 @@ import { NA_ADJECTIVES } from './data/data_formsOfAdjectives';
 })
 export class AppComponent {
   title = 'learning-japanese';
+  hiraganaK: Array<iKana> = HIRAGANA_K;
   vocabulary: Array<iVocabularyCard> = VOCABULARY;
   adjectives: Array<iFormsOfAdjectivesCard> = NA_ADJECTIVES;
   dictionary: Array<iDictionaryTableRow> = [

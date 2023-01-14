@@ -4,7 +4,11 @@ import { Component } from '@angular/core';
 import { iKana } from '../kana/kana.model';
 
 // data
-import { KATAKANA_VOWELS } from 'src/app/data/data_katakanaSyllables';
+import {
+  KATAKANA_K,
+  KATAKANA_VOWELS,
+  KATAKANA_Y,
+} from 'src/app/data/data_katakanaSyllables';
 
 @Component({
   selector: 'overview-katakana',
@@ -13,4 +17,6 @@ import { KATAKANA_VOWELS } from 'src/app/data/data_katakanaSyllables';
 })
 export class OverviewKatakana {
   katakanaVowels: Array<iKana> = KATAKANA_VOWELS;
+  katakanaK: Array<iKana> = KATAKANA_K;
+  katakanaY: Array<iKana> = KATAKANA_Y;
 }

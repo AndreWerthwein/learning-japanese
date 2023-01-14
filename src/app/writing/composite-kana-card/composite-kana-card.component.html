@@ -1,1 +1,19 @@
-<p>composite-kana works!</p>
+<select>
+  <option *ngFor="let kana of data.rowOfKana"></option>
+</select>
+
+<!-- hiragana -->
+<select *ngIf="data.isHiragana">
+  <option *ngFor="let option; in: hiraganaOptions">
+    <kana [data]="option"></kana>
+  </option>
+</select>
+
+<!-- katakana -->
+<select *ngIf="!data.isHiragana">
+  <option *ngFor="let option; in: katakanaOptions">
+    <kana [data]="option"></kana>
+  </option>
+</select>
+
+<kana [data]="data.solution"></kana>
