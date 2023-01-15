@@ -27,7 +27,7 @@ $kana-dropdown__options--max-height: calc(
   }
 
   .kana-dropdown__options {
-    position: relative;
+    position: absolute;
     width: calc(#{$base__size--xxl} + #{$base__size--l} + #{$base__size--xs});
     margin: $base__size--xxs 0 0 0;
     max-height: 0;

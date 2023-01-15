@@ -36,6 +36,7 @@ import { Contact } from './legal-notices/contact/contact.component';
 import { PrivacyPolicy } from './legal-notices/privacy-policy/privacy-policy.component';
 import { LegalNoticesFooterComponent } from './legal-notices/legal-notices-footer/legal-notices-footer.component';
 import { Home } from './home/home.component';
+import { DerivativeKanaCard } from './writing/derivative-kana-card/derivative-kana-card.component';
 
 const ROUTES: Routes = [
   {
@@ -115,6 +116,7 @@ const ROUTES: Routes = [
     LegalNoticesFooterComponent,
     Home,
     KanaDropdown,
+    DerivativeKanaCard,
   ],
   imports: [
     BrowserModule,
