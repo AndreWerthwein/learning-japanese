@@ -18,4 +18,6 @@ export class DerivativeKanaCard {
 
   // local variables
   kanaDakuten: Array<iKana> = KANA_DAKUTEN;
+  answerGiven: boolean = false;
+  userSuccess: boolean;
 }

@@ -1,0 +1,23 @@
+@import "sizes";
+@import "mixins";
+
+$kana-dropdown__size--width: calc(
+  #{$base__size--xxl} + #{$base__size--xs} + #{$base__size--l}
+);
+
+:host {
+  display: grid;
+  grid-template-columns: $kana-dropdown__size--width $base__size--xxl $kana-dropdown__size--width $base__size--xxl $kana-dropdown__size--width $base__size--xxl $base__size--xxl $base__size--xxl;
+  border: thin coral solid;
+
+  .operator__icon,
+  .feedback__user {
+    width: $base__size--xxl;
+    height: $base__size--xxl;
+    @include container__single-element--center-center;
+
+    & > p {
+      margin: 0;
+    }
+  }
+}

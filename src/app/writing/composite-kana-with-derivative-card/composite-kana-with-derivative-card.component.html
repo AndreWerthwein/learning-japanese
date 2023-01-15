@@ -1,28 +1,24 @@
-<kana-dropdown
-  [data]="data.rowOfKana"
-  (choice)="setKanaValue($event)"
-></kana-dropdown>
+<kana-dropdown [data]="data.rowOfKana"></kana-dropdown>
+
+<section class="operator__icon">
+  <p class="material-icons">add</p>
+</section>
+
+<kana-dropdown [data]="kanaDakuten"></kana-dropdown>
 
 <section class="operator__icon">
   <p class="material-icons">add</p>
 </section>
 
 <!-- ?? 'ya', 'yu' or 'yo'  in hiragana or katakana -->
-<kana-dropdown
-  *ngIf="data.isHiragana"
-  [data]="hiraganaY"
-  (choice)="setYValue($event)"
-></kana-dropdown>
-<kana-dropdown
-  *ngIf="!data.isHiragana"
-  [data]="katakanaY"
-  (choice)="setYValue($event)"
-></kana-dropdown>
+<kana-dropdown *ngIf="data.isHiragana" [data]="hiraganaY"></kana-dropdown>
+<kana-dropdown *ngIf="!data.isHiragana" [data]="katakanaY"></kana-dropdown>
 
 <section class="operator__icon">
   <p class="material-icons">east</p>
 </section>
 
+<!-- ?? '゛', or '゜' -->
 <kana [data]="data.solution"></kana>
 
 <section class="feedback__user">

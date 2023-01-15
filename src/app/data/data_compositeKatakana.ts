@@ -9,7 +9,7 @@ let katakanaK: Array<iKana> = KATAKANA_K;
 
 const COMPOSITE_KATAKANA: Array<iCompositeKanaCardCard> = [
   {
-    isHiragana: false,
+    isHiragana: false, // todo: refactoring of data-model to set 'isHiragana' only once
     rowOfKana: katakanaK,
     solution: {
       kana: 'キャ',

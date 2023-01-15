@@ -10,4 +10,10 @@
   <p class="material-icons">east</p>
 </section>
 
+<!-- ?? '゛', or '゜' -->
 <kana [data]="data.solution"></kana>
+
+<section class="feedback__user">
+  <p *ngIf="answerGiven && userSuccess" class="material-icons">check</p>
+  <p *ngIf="answerGiven && !userSuccess" class="material-icons">close</p>
+</section>
