@@ -3,37 +3,134 @@
 <p>{{ data.adjective.translation }}</p>
 
 <table>
-    <head></head>
-    <tbody>
-        <tr>
-            <td>Negative Present:</td>
-            <td [class.answer__show]="showAnswerFor__NegativePresent">
-                <p [title]="data.negativePresent.pronunciation">{{ data.negativePresent.kana}}</p>
-                <p>{{ data.negativePresent.translation }}</p>
-            </td>
-            <td><button [title]="'Show Answer'" (click)="onShowAnswerFor__NegativePresent()"><p class="material-icons">visibility</p></button></td>
-            <td><button [title]="'I got it right.'" (click)="onSuccess()" [disabled]="!showAnswerFor__NegativePresent"><p class="material-icons">check</p></button></td>
-            <td><button [title]="'I got it wrong.'" (click)="onFailure()" [disabled]="!showAnswerFor__NegativePresent"><p class="material-icons">close</p></button></td>
-        </tr>
-        <tr>
-            <td>Positive Past:</td>
-            <td [class.answer__show]="showAnswerFor__PositivePast">
-                <p [title]="data.positivePast.pronunciation">{{ data.positivePast.kana}}</p>
-                <p>{{ data.positivePast.translation }}</p>
-            </td>
-            <td><button [title]="'Show Answer'" (click)="onShowAnswerFor__PositivePast()"><p class="material-icons">visibility</p></button></td>
-            <td><button [title]="'I got it right.'" (click)="onSuccess()" [disabled]="!showAnswerFor__PositivePast"><p class="material-icons">check</p></button></td>
-            <td><button [title]="'I got it wrong.'" (click)="onFailure()" [disabled]="!showAnswerFor__PositivePast"><p class="material-icons">close</p></button></td>
-        </tr>
-        <tr>
-            <td>Negative Past:</td>
-            <td [class.answer__show]="showAnswerFor__NegativePast">
-                <p [title]="data.negativePast.pronunciation">{{ data.negativePast.kana}}</p>
-                <p>{{ data.negativePast.translation }}</p>
-            </td>
-            <td><button [title]="'Show Answer'" (click)="onShowAnswerFor__NegativePast()"><p class="material-icons">visibility</p></button></td>
-            <td><button [title]="'I got it right.'" (click)="onSuccess()" [disabled]="!showAnswerFor__NegativePast"><p class="material-icons">check</p></button></td>
-            <td><button [title]="'I got it wrong.'" (click)="onFailure()" [disabled]="!showAnswerFor__NegativePast"><p class="material-icons">close</p></button></td>
-        </tr>
-    </tbody>
+  <head></head>
+  <tbody>
+    <tr>
+      <td>Negative Present:</td>
+      <td [class.answer__show]="showAnswerFor__NegativePresent">
+        <p [title]="data.negativePresent.pronunciation">
+          {{ data.negativePresent.kana }}
+        </p>
+        <p>{{ data.negativePresent.translation }}</p>
+      </td>
+      <td>
+        <button
+          [title]="'Show Answer'"
+          (click)="onShowAnswerFor__NegativePresent()"
+        >
+          <p class="material-icons">visibility</p>
+        </button>
+      </td>
+      <td>
+        <button
+          [title]="'I got it right.'"
+          (click)="onSuccess(); disableOptionsNegativePresent()"
+          [disabled]="
+            !showAnswerFor__NegativePresent || optionChosen__NegativePresent
+          "
+        >
+          <p class="material-icons">check</p>
+        </button>
+      </td>
+      <td>
+        <button
+          [title]="'I got it wrong.'"
+          (click)="onFailure(); disableOptionsNegativePresent()"
+          [disabled]="
+            !showAnswerFor__NegativePresent || optionChosen__NegativePresent
+          "
+        >
+          <p class="material-icons">close</p>
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>Positive Past:</td>
+      <td [class.answer__show]="showAnswerFor__PositivePast">
+        <p [title]="data.positivePast.pronunciation">
+          {{ data.positivePast.kana }}
+        </p>
+        <p>{{ data.positivePast.translation }}</p>
+      </td>
+      <td>
+        <button
+          [title]="'Show Answer'"
+          (click)="onShowAnswerFor__PositivePast()"
+        >
+          <p class="material-icons">visibility</p>
+        </button>
+      </td>
+      <td>
+        <button
+          [title]="'I got it right.'"
+          (click)="onSuccess(); disableOptionsPositivePast()"
+          [disabled]="
+            !showAnswerFor__PositivePast || optionChosen__PositivePast
+          "
+        >
+          <p class="material-icons">check</p>
+        </button>
+      </td>
+      <td>
+        <button
+          [title]="'I got it wrong.'"
+          (click)="onFailure(); disableOptionsPositivePast()"
+          [disabled]="
+            !showAnswerFor__PositivePast || optionChosen__PositivePast
+          "
+        >
+          <p class="material-icons">close</p>
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>Negative Past:</td>
+      <td [class.answer__show]="showAnswerFor__NegativePast">
+        <p [title]="data.negativePast.pronunciation">
+          {{ data.negativePast.kana }}
+        </p>
+        <p>{{ data.negativePast.translation }}</p>
+      </td>
+      <td>
+        <button
+          [title]="'Show Answer'"
+          (click)="onShowAnswerFor__NegativePast()"
+        >
+          <p class="material-icons">visibility</p>
+        </button>
+      </td>
+      <td>
+        <button
+          [title]="'I got it right.'"
+          (click)="onSuccess(); disableOptionsNegativePast()"
+          [disabled]="
+            !showAnswerFor__NegativePast || optionChosen__NegativePast
+          "
+        >
+          <p class="material-icons">check</p>
+        </button>
+      </td>
+      <td>
+        <button
+          [title]="'I got it wrong.'"
+          (click)="onFailure(); disableOptionsNegativePast()"
+          [disabled]="
+            !showAnswerFor__NegativePast || optionChosen__NegativePast
+          "
+        >
+          <p class="material-icons">close</p>
+        </button>
+      </td>
+    </tr>
+  </tbody>
 </table>
+
+<div class="card__feedback">
+  <section class="card__feedback--error">
+    <section [ngStyle]="{ 'width.%': error * (100 / 3) }"></section>
+  </section>
+  <section class="card__feedback--success">
+    <section [ngStyle]="{ 'width.%': success * (100 / 3) }"></section>
+  </section>
+</div>
+<p class="card__feedback--summary">{{ error }} | {{ success }}</p>

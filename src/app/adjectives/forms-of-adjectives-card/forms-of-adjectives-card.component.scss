@@ -1,17 +1,58 @@
-:host {
-    & >table {
-        &> tbody {
-            & > tr {
-                & > td:nth-child(2) {
-                    opacity: 0;
-                    transition: all 0.3s ease-in-out;
-                }
+@import "sizes";
 
-                .answer__show {
-                    opacity: 1 !important;
-                }
-            }
+:host {
+  & > table {
+    & > tbody {
+      & > tr {
+        & > td:nth-child(2) {
+          opacity: 0;
+          transition: all 0.3s ease-in-out;
         }
+
+        .answer__show {
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+
+  .card__feedback {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .card__feedback--error {
+      width: 50%;
+      height: $base__size--xs;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      & > section {
+        height: 100%;
+        background-color: red;
+      }
     }
 
+    .card__feedback--success {
+      width: 50%;
+      height: $base__size--xs;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      & > section {
+        height: 100%;
+        background-color: green;
+      }
+    }
+  }
+
+  .card__feedback--summary {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+  }
 }

@@ -1,36 +1,13 @@
+<nav></nav>
+<a routerLink="vocabulary"><button>Vocabulary</button></a>
+<a routerLink="writing/overview-hiragana"><button>Overview Hiragana</button></a>
+<a routerLink="writing/overview-katakana"><button>Overview Katakana</button></a>
+<a routerLink="adjectives/forms-of-adjectives"
+  ><button>Forms of Adjectives</button></a
+>
+
 <!-- content -->
-<!-- <router-outlet></router-outlet> -->
+<router-outlet></router-outlet>
 
 <!-- footer -->
-<!-- <legal-notices-footer></legal-notices-footer> -->
-<composite-kana-card
-  [data]="{
-    isHiragana: false,
-    rowOfKana: katakanaK,
-    solution: {
-      kana: 'キャ',
-      pronunciation: 'kya'
-    }
-  }"
-></composite-kana-card>
-
-<derivative-kana-card
-  [data]="{
-    rowOfKana: katakanaK,
-    solution: {
-      kana: 'ギ',
-      pronunciation: 'gi'
-    }
-  }"
-></derivative-kana-card>
-
-<composite-kana-with-derivative-card
-  [data]="{
-    isHiragana: false,
-    rowOfKana: katakanaK,
-    solution: {
-      kana: 'ギャ',
-      pronunciation: 'gya'
-    }
-  }"
-></composite-kana-with-derivative-card>
+<legal-notices-footer></legal-notices-footer>
